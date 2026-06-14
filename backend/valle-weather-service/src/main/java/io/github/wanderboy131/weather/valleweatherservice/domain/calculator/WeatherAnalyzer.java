@@ -3,7 +3,7 @@ package io.github.wanderboy131.weather.valleweatherservice.domain.calculator;
 import org.springframework.stereotype.Component;
 
 @Component
-public class OrographicRainCalculator {
+public class WeatherAnalyzer {
     // Wind direction thresholds for Valledupar's microclimate
     private static final double WIND_DIR_SSW_MIN = 185.0;
     private static final double WIND_DIR_SSW_MAX = 225.0;

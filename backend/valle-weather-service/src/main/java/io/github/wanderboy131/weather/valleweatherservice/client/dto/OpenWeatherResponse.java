@@ -10,7 +10,7 @@ public class OpenWeatherResponse {
     private CloudData clouds;
     private List<WeatherDescription> weather;
 
-    // Getters y Setters
+
     public MainData getMain() { return main; }
     public void setMain(MainData main) { this.main = main; }
 
@@ -23,7 +23,7 @@ public class OpenWeatherResponse {
     public List<WeatherDescription> getWeather() { return weather; }
     public void setWeather(List<WeatherDescription> weather) { this.weather = weather; }
 
-    // --- Clases Internas Estáticas para mapear los sub-objetos del JSON ---
+
 
     public static class MainData {
         private double temp;
@@ -47,7 +47,7 @@ public class OpenWeatherResponse {
         private double speed;
         private double deg;
 
-        // Getters y Setters
+
         public double getSpeed() { return speed; }
         public void setSpeed(double speed) { this.speed = speed; }
 
@@ -59,7 +59,7 @@ public class OpenWeatherResponse {
         @JsonProperty("all") // OpenWeather manda el porcentaje de nubes en la propiedad "all"
         private int cloudCover;
 
-        // Getters y Setters
+
         public int getCloudCover() { return cloudCover; }
         public void setCloudCover(int cloudCover) { this.cloudCover = cloudCover; }
     }
@@ -68,7 +68,7 @@ public class OpenWeatherResponse {
         private String description;
         private String icon;
 
-        // Getters y Setters
+
         public String getDescription() { return description; }
         public void setDescription(String description) { this.description = description; }
 

@@ -20,19 +20,19 @@ public class OpenWeatherClient {
         this.restTemplate = restTemplate;
     }
 
-    // Recibe latitud y longitud de forma dinámica desde el frontend
+
     public OpenWeatherResponse fetchCurrentWeather(double latitude, double longitude) {
         String url = UriComponentsBuilder.fromHttpUrl(baseUrl + "/weather")
                 .queryParam("lat", latitude)
                 .queryParam("lon", longitude)
                 .queryParam("appid", apiKey)
-                .queryParam("units", "metric") // Retorna temperatura en Celsius y velocidad en m/s
+                .queryParam("units", "metric") //
                 .toUriString();
 
         try {
             return restTemplate.getForObject(url, OpenWeatherResponse.class);
         } catch (Exception e) {
-            // Manejo de errores si OpenWeather falla o el token expira
+
             throw new RuntimeException("Failed to fetch weather data from OpenWeather API", e);
         }
     }
