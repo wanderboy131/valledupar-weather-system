@@ -29,7 +29,7 @@ public class OpenWeatherResponse {
         private double temp;
         private int humidity;
 
-        @JsonProperty("grnd_level") // Esto le dice a Jackson que mapee el snake_case del JSON a camelCase en Java
+        @JsonProperty("grnd_level")
         private double groundLevelPressure;
 
         // Getters y Setters
@@ -56,7 +56,7 @@ public class OpenWeatherResponse {
     }
 
     public static class CloudData {
-        @JsonProperty("all") // OpenWeather manda el porcentaje de nubes en la propiedad "all"
+        @JsonProperty("all")
         private int cloudCover;
 
 

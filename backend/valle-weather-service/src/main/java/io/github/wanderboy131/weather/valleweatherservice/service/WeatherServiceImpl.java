@@ -31,10 +31,11 @@ public class WeatherServiceImpl implements WeatherService {
         double pressure = apiResponse.getMain().getGroundLevelPressure();
         int cloudCover = apiResponse.getClouds() != null ? apiResponse.getClouds().getCloudCover() : 0;
 
-        String descriptionText = apiResponse.getWeather().isEmpty() ? "Sin descripción"
-                : apiResponse.getWeather().get(0).getDescription();
-        String icon = apiResponse.getWeather().isEmpty() ? "01d"
-                : apiResponse.getWeather().get(0).getIcon();
+        var weather = apiResponse.getWeather();
+        var firstWeather = weather.isEmpty() ? null : weather.get(0);
+
+        String descriptionText = firstWeather != null ? firstWeather.getDescription() : "Sin descripción";
+        String icon = firstWeather != null ? firstWeather.getIcon() : "01d";
 
 
 

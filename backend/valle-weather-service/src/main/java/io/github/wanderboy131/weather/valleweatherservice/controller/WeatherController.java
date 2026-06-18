@@ -12,13 +12,14 @@ import org.springframework.web.bind.annotation.*;
 public class WeatherController {
 
     private final WeatherService weatherService;
+
     public WeatherController(WeatherService weatherService) {
         this.weatherService = weatherService;
     }
 
     @GetMapping("/analyze")
     public ResponseEntity<WeatherAnalysisResponseDto> analyzeWeather(@RequestParam double lat, @RequestParam double lon) {
-        WeatherAnalysisResponseDto analysis =  weatherService.analyzeWeather(lat, lon);
+        WeatherAnalysisResponseDto analysis = weatherService.analyzeWeather(lat, lon);
         return ResponseEntity.ok(analysis);
     }
 
